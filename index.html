@@ -1,47 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Awesome</title>
     <style type="text/tailwindcss">
+        :root {
+            --primary: rgb(88, 40, 244);
+            --primary-hover: rgb(69, 29, 200);
+        }
+        h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .button {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            text-align: center;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            padding: 0 1rem;
+            padding-left: 1rem;
+            min-height: 3.3rem;
+            font-weight: 600;
+            box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+            transition-property: transform;
+            transition-duration: .2s;
+            color: white;
+            background-color: var(--primary);
+        }
+        .button:hover {
+            background-color: var(--primary-hover);
+        }
+        .button.active {
+            transform: scale(0.95);
+        }
         .navitems>li>a {
             @apply h-12 px-4 hover:bg-gray-700 rounded-lg flex items-center gap-2
         }
     </style>
 </head>
+
 <body>
 
-<header class="flex items-center justify-between px-8 bg-gray-800 h-20 text-white sticky top-0 z-50">
-    <logo>
-        <a class="flex items-center gap-1"href="">
-            <img class="h-8 -mt-1" src="https://img.icons8.com/small/64/ffffff/fire-heart.png" alt="fire-heart"/>
-            <span>Awesome</span>
-        </a>
-    </logo>
-    <nav>
-        <ul class="flex items-center navitems">
-            <li><a href="">Home</a></li>
-            <li><a href="">Create Post</a></li>
-            <li>
-                <a href="">
-                    <img class="h-8 rounded-full object-cover bg-teal-200" src="https://img.icons8.com/doodle/96/bart-simpson.png" alt="bart-simpson"/>
-                    <span>Bart</span>
-                    <img class="w-4 " src="https://img.icons8.com/ios/50/777777/expand-arrow--v1.png" alt="expand-arrow--v1"/>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
+    <header class="flex items-center justify-between px-8 bg-gray-800 h-20 text-white sticky top-0 z-50">
+        <logo>
+            <a class="flex items-center gap-1" href="">
+                <img class="h-8 -mt-1" src="https://img.icons8.com/small/64/ffffff/fire-heart.png" alt="fire-heart" />
+                <span>Awesome</span>
+            </a>
+        </logo>
+        <nav>
+            <ul class="flex items-center navitems">
+                <li><a href="">Home</a></li>
+                <li><a href="">Create Post</a></li>
+                <li>
+                    <a href="">
+                        <img class="h-8 rounded-full object-cover bg-teal-200"
+                            src="https://img.icons8.com/doodle/96/bart-simpson.png" alt="bart-simpson" />
+                        <span>Bart</span>
+                        <img class="w-4 " src="https://img.icons8.com/ios/50/777777/expand-arrow--v1.png"
+                            alt="expand-arrow--v1" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<a class="hover:bg-red-500">Hover me</a>
+    <hero class="grid bg-gray-700 text-white text-center bg-[url('https://live.staticflickr.com/65535/49909538937_3255dcf9e7_b.jpg')] bg-cover">
+        <div class="col-start-1 row-start-1 col-span-full row-span-full absolute inset-0 bg-gray-800 opacity-40"></div>
+        <div class="col-start-1 row-start-1 col-span-full row-span-full py-24 px-10 z-10">
+            <h1>Awesome Photos & Captions</h1>
+            <p class="text-lg font-bold mb-5">Share your favorite photos from Flickr and add a great caption</p>
+            <a class="button" href="">Get Started</a>
+        </div>
+    </hero>
 
-<div></div>
+    <div>
+        <a class="hover:bg-red-500">Hover me</a>
 
-<div class="relative [&::after]:content-['*'] [&::after]:text-red-500">
-    Required Field
-</div>
-    
+        <div></div>
+
+        <div class="relative [&::after]:content-['*'] [&::after]:text-red-500">
+            Required Field
+        </div>
+    </div>
 </body>
+
 </html>
