@@ -35,6 +35,13 @@
             @apply font-lobster;
         }
 
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
         /* Button Styles */
         .button {
             display: inline-flex;
@@ -78,6 +85,16 @@
             margin-bottom: 2rem;
             background-color: white;
             padding-bottom: 1rem;
+        }
+
+        .hoverlist>* {
+            @apply hover:bg-gray-100 rounded-md transition duration-150;
+        }
+        .hoverlist>*>a {
+            @apply flex items-center p-2 block;
+        }
+        .highlighted {
+            @apply !bg-indigo-100;
         }
     </style>
 </head>
@@ -171,28 +188,34 @@
                 </article>
             </main>
             <!-- Sidebar -->
-            <aside class="bg-blue-200 p-6 rounded-lg">
-                <section>
-                    <h2 class="text-xl font-semibold mb-4">Categories</h2>
-                    <ul>
-                        <li><a href="">Landscape</a></li>
-                        <li><a href="">People</a></li>
-                        <li><a href="">Animals</a></li>
-                        <li><a href="">Abstract</a></li>
-                        <li><a href="">Black & White</a></li>
+            <aside class="rounded-lg">
+                <section class="card p-4">
+                    <h2>Categories</h2>
+                    <ul class="hoverlist">
+                        <li class="highlighted"><a href="">
+                            <img class="w-8 h-8 object-cover mr-2" src="https://img.icons8.com/small/96/null/landscape.png">
+                            <span class="font-bold text-sm">Landscape</span>
+                        </a></li>
+                        <li><a href="">
+                            <img class="w-8 h-8 object-cover mr-2" src="https://img.icons8.com/small/96/null/portrait.png">
+                            <span class="font-bold text-sm">People</span>
+                        </a></li>
+                        <li><a href="">
+                            <img class="w-8 h-8 object-cover mr-2" src="https://img.icons8.com/small/96/null/dog.png">
+                            <span class="font-bold text-sm">Animals</span>
+                        </a></li>
+                        <li><a href="">
+                            <img class="w-8 h-8 object-cover mr-2" src="https://img.icons8.com/small/96/null/collage.png">
+                            <span class="font-bold text-sm">Abstract</span>
+                        </a></li>
+                        <li><a href="">
+                            <img class="w-8 h-8 object-cover mr-2" src="https://img.icons8.com/small/96/null/180-degrees.png">
+                            <span class="font-bold text-sm">Black & White</span>
+                        </a></li>
                     </ul>
                 </section>
                 
             </aside>
-        </div>
-    </div>
-
-    <!-- Additional Content (for demonstration purposes) -->
-    <div>
-        <a class="hover:bg-red-500">Hover me</a>
-        <div></div>
-        <div class="relative [&::after]:content-['*'] [&::after]:text-red-500">
-            Required Field
         </div>
     </div>
 </body>
