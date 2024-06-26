@@ -4,21 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome</title>
+
+    <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <title>Awesome</title>
     <link rel="icon" type="image/png" href="https://img.icons8.com/small/64/000000/fire-heart.png">
+
+    <!-- Custom Styles -->
     <style type="text/tailwindcss">
+        /* Custom Properties */
         :root {
             --primary: rgb(88, 40, 244);
             --primary-hover: rgb(69, 29, 200);
         }
+
+        /* Custom Classes */
         .font-lobster {
             font-family: "Lobster", sans-serif;
             font-style: normal;
-            }
+        }
+
         h1 {
             font-size: 4rem;
             line-height: 1.2;
@@ -26,6 +34,8 @@
             margin-bottom: 1rem;
             @apply font-lobster;
         }
+
+        /* Button Styles */
         .button {
             display: inline-flex;
             flex-wrap: wrap;
@@ -51,9 +61,13 @@
         .button.active {
             transform: scale(0.95);
         }
+
+        /* Navigation Styles */
         .navitems>li>a {
             @apply h-12 px-4 hover:bg-gray-700 rounded-lg flex items-center gap-2
         }
+
+        /* Card Styles */
         .card {
             display: flex;
             flex-direction: column;
@@ -69,14 +83,16 @@
 </head>
 
 <body class="bg-gray-100">
-
+    <!-- Header Section -->
     <header class="flex items-center justify-between px-8 bg-gray-800 h-20 text-white sticky top-0 z-50">
+        <!-- Logo -->
         <logo>
             <a class="flex items-center gap-1" href="">
                 <img class="h-8 -mt-1" src="https://img.icons8.com/small/64/ffffff/fire-heart.png" alt="fire-heart" />
                 <span>Awesome</span>
             </a>
         </logo>
+        <!-- Navigation -->
         <nav>
             <ul class="flex items-center navitems">
                 <li><a href="">Home</a></li>
@@ -94,6 +110,7 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <hero
         class="grid bg-gray-700 text-white text-center bg-[url('https://live.staticflickr.com/65535/49909538937_3255dcf9e7_b.jpg')] bg-cover">
         <div class="col-start-1 row-start-1 bg-gray-800 bg-opacity-40"></div>
@@ -104,36 +121,46 @@
         </div>
     </hero>
 
+    <!-- Main Content Section -->
     <div class="container mx-auto px-4 my-8 max-w-6xl mt-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <main class="bg-red-200 md:col-span-2 rounded-lg">
+            <!-- Main Content Area -->
+            <main class="md:col-span-2 rounded-lg">
+                <!-- Article Card -->
                 <div id="article" class="card">
+                    <!-- Article Header -->
                     <div id="article-header" class="flex items-center justify-between px-4 h-14">
                         <h3 class="text-lg font-bold w-[50%] truncate">Little Jedi</h3>
                         <div class="text-sm text-gray-500">
                             flickr @ <a href="" target="blank" class="hover:underline">John Doe</a>
                         </div>
                     </div>
+                    <!-- Article Image -->
                     <figure id="article-figure">
                         <a href="">
-                            <img class="w-full" src="https://live.staticflickr.com/65535/50618365686_36f887ab88_c.jpg">
+                            <img class="w-full" src="https://live.staticflickr.com/65535/50618365686_36f887ab88_c.jpg" alt="Little Jedi">
                         </a>
                     </figure>
+                    <!-- Article Footer -->
                     <div id="article-footer" class="p-4 pb-2">
+                        <!-- Author Info -->
                         <a href="" class="flex items-center gap-1 mb-4">
-                            <img class="w-8 h-8 rounded-full" src="https://img.icons8.com/small/96/A9A9A9/happy.png">
+                            <img class="w-8 h-8 rounded-full" src="https://img.icons8.com/small/96/A9A9A9/happy.png" alt="Author">
                             <span class="font-bold hover:underline">Lisa</span>
                         </a>
+                        <!-- Caption -->
                         <p class="text-5xl mb-10 px-4 font-lobster">Jedi Kitty protects the street</p>
+                        <!-- Tags -->
                         <div id="article-tags" class="flex items-center gap-2 text-sm mb-5">
                             <a class="bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-500 hover:text-white" href="">Animals</a>
                             <a href="">Cute</a>
                         </div>
+                        <!-- Article Actions -->
                         <div class="flex items-center justify-between text-sm px-2">
                             <a class="font-bold hover:underline" href="">Comments <span class="font-light text-gray-500 ml-2">3</span></a>
                             <div class="flex items-center gap-4 [&>a:hover]:underline">
                                 <div class="flex items-center gap-1">
-                                    <img class="w-5 -mt-1" src="https://img.icons8.com/small/24/000000/fire-heart.png">1
+                                    <img class="w-5 -mt-1" src="https://img.icons8.com/small/24/000000/fire-heart.png" alt="Like">1
                                 </div>
                                 <a href="">Like</a>
                                 <a href="">Edit</a>
@@ -143,6 +170,7 @@
                     </div>
                 </div>
             </main>
+            <!-- Sidebar -->
             <aside class="bg-blue-200 p-6 rounded-lg">
                 <h3 class="text-xl font-semibold mb-4">Sidebar</h3>
                 <p>This is the sidebar content. It occupies the last column.</p>
@@ -150,11 +178,10 @@
         </div>
     </div>
 
+    <!-- Additional Content (for demonstration purposes) -->
     <div>
         <a class="hover:bg-red-500">Hover me</a>
-
         <div></div>
-
         <div class="relative [&::after]:content-['*'] [&::after]:text-red-500">
             Required Field
         </div>
