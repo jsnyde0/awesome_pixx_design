@@ -28,11 +28,18 @@
             font-style: normal;
         }
 
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            20% { opacity: 0; }
+            100% { opacity: a; }
+        }
+
         h1 {
             font-size: 4rem;
             line-height: 1.2;
             font-weight: bold;
             margin-bottom: 1rem;
+            animation: fadeIn 0.5s ease-in;
             @apply font-lobster;
         }
 
