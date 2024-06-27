@@ -105,25 +105,37 @@
 
 <body class="bg-gray-100">
     <!-- Header Section -->
-    <header class="flex items-center justify-between px-8 bg-gray-800 h-20 text-white sticky top-0 z-50">
-        <!-- Logo -->
-        <logo>
-            <a class="flex items-center gap-1" href="">
-                <img class="h-8 -mt-1" src="https://img.icons8.com/small/64/ffffff/fire-heart.png" alt="fire-heart" />
-                <span>Awesome</span>
-            </a>
-        </logo>
+    <header class="md:flex items-center justify-between [&>*]:px-8 bg-gray-800 h-20 text-white sticky top-0 z-50"
+        x-data="{mobileNavOpen: false}">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <logo>
+                <a class="flex items-center gap-1" href="">
+                    <img class="h-8 -mt-1" src="https://img.icons8.com/small/64/ffffff/fire-heart.png"
+                        alt="fire-heart" />
+                    <span>Awesome</span>
+                </a>
+            </logo>
 
-        <!-- Hamburger menu for mobile -->
-        <button @click="mobileNavOpen = true" class="md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-
+            <!-- Hamburger menu for mobile -->
+            <button @click="mobileNavOpen = !mobileNavOpen" class="md:hidden">
+                <svg x-show="!mobileNavOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg x-show="mobileNavOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
         <!-- Navigation -->
-        <nav class="hidden md:block">
-            <ul class="flex items-center navitems">
+        <nav class="md:!block bg-gray-800 w-screen h-screen md:w-auto md:h-auto" x-cloak x-show="mobileNavOpen"
+            x-transition:enter="duration-150 ease-out"
+            x-transition:enter-start="opacity-0 -translate-y-96"
+            x-transition:enter-end="opacity-100 translate-y-0">
+            <ul
+                class="flex items-center navitems flex-col md:flex-row gap-8 md:gap-0 justify-center h-full -mt-24 md:mt-0">
                 <li><a href="">Home</a></li>
                 <li><a href="">Create Post</a></li>
                 <li x-data="{ dropdownOpen: false }" class="relative">
@@ -131,18 +143,14 @@
                         <img class="h-8 rounded-full object-cover bg-teal-200"
                             src="https://img.icons8.com/doodle/96/bart-simpson.png" alt="bart-simpson" />
                         <span class="ml-2">Bart</span>
-                        <img class="w-4 ml-2 transition-transform duration-300" 
+                        <img class="w-4 ml-2 transition-transform duration-300"
                             x-bind:class="{ 'rotate-180': dropdownOpen }"
-                            src="https://img.icons8.com/ios/50/777777/expand-arrow--v1.png"
-                            alt="expand-arrow--v1" />
+                            src="https://img.icons8.com/ios/50/777777/expand-arrow--v1.png" alt="expand-arrow--v1" />
                     </a>
-                    <div x-show="dropdownOpen" 
-                         x-transition:enter="transition ease-out duration-300"
-                         x-transition:enter-start="opacity-0 transform scale-90"
-                         x-transition:enter-end="opacity-100 transform scale-100"
-                         x-on:click.away="dropdownOpen = false"
-                         class="absolute right-0 bg-white text-black shadow rounded-lg w-40 p-2 z-20"
-                         x-cloak>
+                    <div x-show="dropdownOpen" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform scale-90"
+                        x-transition:enter-end="opacity-100 transform scale-100" x-on:click.away="dropdownOpen = false"
+                        class="absolute right-0 bg-white text-black shadow rounded-lg w-40 p-2 z-20" x-cloak>
                         <ul class="hoverlist [&>li>a]:justify-end">
                             <li><a href="#">My Profile</a></li>
                             <li><a href="#">Edit Profile</a></li>
