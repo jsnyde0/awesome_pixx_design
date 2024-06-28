@@ -183,8 +183,15 @@
     <!-- Main Content Section -->
     <div class="container mx-auto px-4 my-8 max-w-5xl mt-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Mobile expand sidebar button-->
+            <a href="#" class="md:hidden h-12 px-4 hover:bg-gray-200 rounded-lg flex items-center gap-2 mx-auto">
+                <span class="">Categories</span>
+                <img class="w-4 ml-2 transition-transform duration-300"
+                    x-bind:class="{ 'rotate-180': dropdownOpen }"
+                    src="https://img.icons8.com/ios/50/777777/expand-arrow--v1.png" alt="expand-arrow--v1" />
+            </a>
             <!-- Main Content Area -->
-            <main class="md:col-span-2 rounded-lg mx-8">
+            <main class="md:col-span-2 rounded-lg mx-[1%] order-2 md:order-1">
                 <!-- Article Card -->
                 <article id="article" class="card">
                     <!-- Article Header -->
@@ -235,7 +242,7 @@
                 </article>
             </main>
             <!-- Sidebar -->
-            <aside class="rounded-lg">
+            <aside class="rounded-lg order-1 md:order-2 mx-[1%] md:mx-0">
                 <section class="card p-4">
                     <h2>Categories</h2>
                     <ul class="hoverlist">
